@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消費者聊天室</title>
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+    <a href="firm.html">去廠商</a>
+    <div id="app">
+        <h1>消費者邱廷鈺聊天室</h1>
+        <div class="chatPlace">
+            <div class="room">
+                <div class="chatWindow">
+                    <p v-for="line in msglist" class="msg"
+                        :class="{owner:line.user == user,other:line.user == company}">
+                        <span class="time">{{ line.time}}</span>
+                        <span class="msgBox"> {{ line.message }}</span>
+                </div>
+                <div class="chatInput">
+                    <input type="text" placeholder="輸入訊息" v-model="textMessage" @keyup.enter="addMessage()">
+                    <button type="button" @click="addMessage()"><i class="fas fa-caret-right"></i></button>
+                </div>
+            </div>
+            <nav>
+                <a href="#" class="roomChooese" v-for="item in chatlist" @click.prevent="choose(item)"
+                    :class="{active:item.id == company}">
+                    <img :src="item.img" alt="">
+                    <p>{{item.name}}</p>
+                    <i v-if="!item.userRead" class="fas fa-exclamation-circle"></i>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script src="userChatVue.js"></script>
+</body>
+
+</html>

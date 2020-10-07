@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    font-family: 微軟正黑體;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    width: 800px;
+    margin: 50px auto;
+    background: #EEEEEE;
+    border-radius: 10px;
+    padding: 15px 30px 30px;
+    font-family: 微軟正黑體;
+}
+
+#app h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.chatPlace {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 10px solid #C4C4C4;
+}
+
+.room {
+    width: 70%;
+    height: 400px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.room .chatWindow {
+    overflow-x: hidden;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.chatWindow .time {
+    color: gray;
+}
+
+.chatWindow .msg {
+    display: flex;
+    align-items: flex-end;
+}
+
+.chatWindow .msg .msgBox {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 60%;
+    word-break: break-word;
+    margin: 0 5px;
+    line-height: 1.5;
+}
+
+.chatWindow .owner {
+    margin: 10px 0 10px auto;
+    justify-content: flex-end;
+}
+
+.chatWindow .owner .msgBox {
+    background: rgb(181, 236, 97);
+}
+
+.chatWindow .other {
+    margin: 10px 0;
+}
+
+.chatWindow .other .msgBox {
+    background: rgb(206, 206, 206);
+    order: -1;
+}
+
+.room .chatInput {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid rgb(59, 59, 59);
+}
+
+.chatInput input {
+    width: 80%;
+    border: 0;
+    outline: none;
+    padding: 10px;
+}
+
+.chatInput button {
+    width: 20%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: 微軟正黑體;
+}
+
+.chatInput button:hover {
+    background: rgb(189, 189, 189);
+}
+
+nav {
+    width: 30%;
+    border-left: 1px solid rgb(59, 59, 59);
+    background: #E8E8E8;
+}
+
+.roomChooese {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: black;
+    background: rgb(234, 245, 252);
+}
+
+.roomChooese:hover {
+    background: rgb(191, 219, 236);
+}
+
+.roomChooese img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.roomChooese p {
+    margin-left: 5px;
+}
+
+.roomChooese i {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    color: red;
+    background: white;
+    border-radius: 50%;
+}
+
+.roomChooese.active {
+    background: rgb(191, 219, 236);
+}
+
+.text {
+    margin-top: 5px;
+    color: grey;
+}
